@@ -1,5 +1,9 @@
 ru:
   course:
+    title: "Мои курсы"
+    themes: "Темы:"
     edit_button: "Изменить настройки курса"
     create_text: "Создать новый курс"
     edit_text: "Изменить курс"
+    published: "Опубликованные"
+    not_published: "Неопубликованные"

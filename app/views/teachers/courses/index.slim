@@ -1,14 +1,14 @@
 .row
   .col-md-8.col-md-offset-2
     .pull-left
-      h3 My Courses
+      h3 =t("course.title")
     .pull-right
-      = link_to "Create new course", new_teachers_course_path, class: "btn btn-default"
+      = link_to t("course.create_text"), new_teachers_course_path, class: "btn btn-default"
     .clearfix
     hr
 
-    h4 Published
+    h4 =t("course.published")
     = render courses.published.ordered_by_title
 
-    h4 Not published
+    h4 =t("course.not_published")
     = render courses.not_published.ordered_by_title

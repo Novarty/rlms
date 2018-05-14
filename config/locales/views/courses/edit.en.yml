@@ -1,5 +1,9 @@
 en:
   course:
+    title: "My courses"
+    themes: "Themes:"
     edit_button: "Edit course settings"
     create_text: "Create new course"
     edit_text: "Edit course"
+    published: "Published"
+    not_published: "Not published"
