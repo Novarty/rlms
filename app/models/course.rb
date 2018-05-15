@@ -18,7 +18,7 @@ class Course < ApplicationRecord
   WHITELIST = /^[a-zA-Z0-9_-]*$/
   def slug_course_validate
     unless WHITELIST=~ slug
-      errors[:slug] << I18n.t("slug.invalide")
+      errors[:slug] << I18n.t("course.slug.invalid")
     end
   end
 

@@ -8,15 +8,14 @@ module Teachers
       def call
         return if course.slug.present?
 
-        title = course.title.strip + Time.now.to_i
-        course.slug = translit(title).gsub(/ /, '_')
+        title = course.title.strip
+        course.slug = translit(title).gsub(/ /, '_') + "#{Time.now.to_i}"
       end
 
       private
 
       def translit(str)
-        str.gsub!(/[^a-zA-Zа-яА-Я0-9]/, '')
-        str.gsub!(/[ЬьъЪ]/, '')
+        str.gsub!(/([^a-zA-Zа-яА-Я0-9])*([ЪъЬь])*/,'')
         Translit.convert(str, :english)
       end
 
