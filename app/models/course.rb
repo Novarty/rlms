@@ -7,8 +7,8 @@ class Course < ApplicationRecord
   has_many :learners, through: :course_participations
 
   validates :title, :slug, :description, :teacher_id, presence: true
-  validates :title, :slug, :description, uniqueness: true
   validate  :slug, :slug_course_validate
+  validates :title, :slug, :description, uniqueness: true
 
   scope :published, -> { where(published: true) }
   scope :not_published, -> { where(published: false) }

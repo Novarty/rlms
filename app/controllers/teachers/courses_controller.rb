@@ -15,6 +15,7 @@ module Teachers
 
     def create
       course.teacher = current_teacher
+      Courses::GenerateSlug.call(course: course)
       course.save
 
       respond_with :teachers, course
@@ -29,7 +30,7 @@ module Teachers
     def update
       course.update(course_params)
 
-      respond_with :teachers, course
+      respond_with :teachers, course.reload
     end
 
     private
