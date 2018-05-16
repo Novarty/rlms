@@ -1,7 +1,7 @@
 .well
   h4 = link_to available_course.title, learners_course_path(available_course)
 
-  p = available_course.description
+  = markdown(available_course.description)
   = form_for [:learners, current_learner.course_participations.new] do |f|
     = f.hidden_field :course_id, value: available_course.id
     .text-center = f.submit "Подписаться на курс", class: "btn btn-default"

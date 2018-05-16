@@ -1,4 +1,4 @@
 .well
   h4 = link_to course.title, learners_course_path(course)
-  p = course.description
+  = markdown(course.description)
   strong Темы: #{course.topics.count}
